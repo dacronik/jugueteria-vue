@@ -1,6 +1,9 @@
 <template>
     <v-container>
-        <h1 class="ma-6">Conoce nuestros Productos</h1>
+        <v-row>
+            <h1 class="ma-6 titulo-productos">Conoce nuestros Productos</h1>
+            <v-icon color="orange-darken-4" size="80">mdi-rocket-launch</v-icon>
+        </v-row>
         <v-row justify="center">
             <v-col cols="12" md="3" lg="3" v-for="juguete in juguetes" :key="juguete.id">
                 <card-productos :juguetes="juguete" @enviar="showCard"/>
@@ -27,7 +30,7 @@
                     <v-btn
                         variant="text"
                         @click="isActive.value = false"
-                    >Close</v-btn>
+                    >Cerrar</v-btn>
                   </v-card-actions>
                 </v-card>
               </template>
@@ -73,5 +76,7 @@ export default {
 </script>
 
 <style scoped>
-    
+    .titulo-productos{
+        font-family: 'Bungee Spice';
+    }
 </style>

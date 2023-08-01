@@ -1,5 +1,5 @@
 <template>
-  <v-app class="bg-blue">
+  <v-app class="fondo">
     <v-main>
       <nav-bar/>
       <router-view/>
@@ -29,3 +29,9 @@ export default {
   },
 }
 </script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Montserrat:wght@400;500;700&display=swap');
+  .fondo{
+    background-image: url('./assets/img/fondo.jpg');
+  }
+</style>

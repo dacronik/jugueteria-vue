@@ -22,11 +22,6 @@
       <div>{{ juguete.description }}</div>
     </v-card-text>
 
-    <v-card-actions>
-      <v-btn color="black">
-        <v-icon size="40">mdi-cart-plus</v-icon>
-      </v-btn>
-    </v-card-actions>
   </v-card>
 
 </template>

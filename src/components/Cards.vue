@@ -25,15 +25,35 @@
       <v-btn color="orange" @click="enviar(juguetes.id)">
         Ver mas
       </v-btn>
-      <v-btn color="orange" v-if="showCartIcon">
+      <v-btn color="orange" v-if="showCartIcon" @click="add">
         <v-icon size="30">mdi-cart-plus</v-icon>
       </v-btn>
     </v-card-actions>
+    <div class="text-center">
+      <v-snackbar
+        v-model="snackbar"
+        color="deep-orange-darken-1"
+        :timeout="timeout"
+      >
+        {{ juguetes.name }} Agregado al carrito
+        <v-icon>mdi-cart-plus</v-icon>
+
+        <template v-slot:actions>
+          <v-btn
+            color="blue"
+            variant="text"
+            @click="snackbar = false"
+          >
+            Cerrar
+          </v-btn>
+        </template>
+      </v-snackbar>
+    </div>
   </v-card>
 </template>
 
 <script>
-
+import { mapActions } from 'vuex'
 export default {
     name: 'cards-comp',
     props: {
@@ -47,12 +67,29 @@ export default {
         }
     },
     data: function () {
-        return {}
+        return {
+          snackbar: false,
+          timeout: 2000,
+        }
     },
     // computed: {},
     methods: {
+      ...mapActions(['addProductCart']),
       enviar(id){
         this.$emit('enviar',id)
+      },
+      add(){
+        let prod={
+          id: this.juguetes.id,
+          name:this.juguetes.name,
+          image:this.juguetes.image_url,
+          price:this.juguetes.price,
+          count:1
+        }
+        //mandando onjeto a vuex
+        this.addProductCart(prod)
+        //activar snackbar
+        this.snackbar=true
       }
     }
     // watch: {},
