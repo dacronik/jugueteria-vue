@@ -34,6 +34,7 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: 85vh;
     }
     .error button{
         background-color: #F4511E;

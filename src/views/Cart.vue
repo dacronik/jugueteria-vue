@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container class="cart">
         <v-row justify="center">
             <v-col align-self="center">
                 <h1 class="titulo">Productos Agregados</h1>
@@ -106,5 +106,9 @@ export default {
     // -- End Lifecycle Methods
 }
 </script>
-
-<style scoped></style>
+    
+<style scoped>
+    .cart{
+        height: 86vh;
+    }
+</style>

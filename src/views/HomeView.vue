@@ -75,4 +75,9 @@ export default defineComponent({
     font-family: Bungee Spice;
     font-size: 4rem;
   }
+  @media screen and (max-width:500px) {
+        .titulo{
+            font-size: 2rem;
+        }
+    }
 </style>

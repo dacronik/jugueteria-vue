@@ -1,14 +1,16 @@
 <template>
   <v-app class="fondo">
+    <nav-bar/>
     <v-main>
-      <nav-bar/>
       <router-view/>
     </v-main>
+    <footer-view/>
   </v-app>
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue';
+import Footer from './components/Footer.vue';
 import { mapActions } from 'vuex';
 
 export default {
@@ -25,7 +27,8 @@ export default {
   },
 
   components:{
-    'nav-bar':NavBar
+    'nav-bar':NavBar,
+    'footer-view':Footer,
   },
 }
 </script>

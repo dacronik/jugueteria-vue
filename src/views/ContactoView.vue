@@ -1,7 +1,9 @@
 <template>
     <v-container class="mt-12">
         <v-row justify="center">
-            <h1 class="titulo">Contactanos</h1>
+            <v-col cols="12">
+                <h1 class="titulo">Contactanos</h1>
+            </v-col>
         </v-row>
         <v-row>
             <v-col>
@@ -46,5 +48,10 @@ export default {
     .titulo {
         font-family: 'Bungee Spice';
         font-size: 4rem;
+    }
+    @media screen and (max-width:500px) {
+        .titulo{
+            font-size: 2rem;
+        }
     }
 </style>
