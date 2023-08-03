@@ -2,18 +2,19 @@
 <template>
   <v-carousel
     cycle
-    height="200"
+    height="250"
     hide-delimiter-background
     show-arrows="hover"
     class="text-black"
   >
-  <v-carousel-item
+    <v-carousel-item
       v-for="(item,i) in items"
       :key="i"
-      :src="item.src"
-      cover
-      contain
-    ></v-carousel-item>
+      >
+      <img :src="item.src" 
+      :alt="'image'+i"
+      class="carrousel-image">
+    </v-carousel-item>
   </v-carousel>
 </template>
 
@@ -49,5 +50,14 @@ export default {
 </script>
 
 <style scoped>
-    
+    .carrousel-image{
+        width: 100%;
+        height: 100%;
+    } 
+    @media screen and (max-width:400px) {
+        .carrousel-image{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
 </style>

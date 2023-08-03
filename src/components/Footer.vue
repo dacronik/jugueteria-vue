@@ -1,13 +1,33 @@
 <template>
-    <v-footer class="d-flex flex-column pa-0">
-        <div class="bg-deep-orange-darken-1 d-flex w-100 align-center px-4 justify-center">
-            <strong>Sigueme en mis Redes Sociales</strong>
-            <v-btn v-for="icon in icons" :key="icon.name" class="mx-4" :icon="icon.name" variant="plain" size="small" @click="redirectTo(icon.to)"></v-btn>
-        </div>
-
-        <div class="px-4 py-2 bg-black text-center w-100 mb-0">
-            {{ new Date().getFullYear() }} — <strong>creado por Gerardo Ortiz</strong>
-        </div>
+    <v-footer
+      color="blue-darken-3"
+      dark
+    >
+      <v-row
+        justify="center"
+        class="my-4 text-center"
+      >
+        <v-col cols="12"
+          ><h4 class="footer-text">Sigueme en mis Redes Sociales</h4></v-col
+        >
+        <v-col cols="12">
+          <v-btn
+            v-for="icon in icons"
+            :key="icon"
+            text
+            color="deep-orange-darken-1"
+            @click="redirectTo(icon.to)"
+            class="mr-4"
+          >
+            <v-icon size="24" :color="icon.color">{{ icon.name }}</v-icon>
+          </v-btn>
+        </v-col>
+        <v-col
+          cols="12"
+          class="align-center"
+          >&copy; 2023 creado por Gerardo Ortiz</v-col
+        >
+      </v-row>
     </v-footer>
 </template>
 
@@ -21,15 +41,18 @@ export default {
                 
                 {
                     name:'mdi-twitter',
-                    to: 'https://twitter.com/DacronikOr'
+                    to: 'https://twitter.com/DacronikOr',
+                    color:'light-blue-lighten-2'
                 },
                 {
                     name:'mdi-linkedin',
-                    to:'https://www.linkedin.com/in/gerardo-ortiz-montecinos-desarrollador/'
+                    to:'https://www.linkedin.com/in/gerardo-ortiz-montecinos-desarrollador/',
+                    color:'light-blue-darken-4'
                 },
                 {
                     name:'mdi-instagram',
-                    to:'https://www.instagram.com/dacronik/'
+                    to:'https://www.instagram.com/dacronik/',
+                    color:'red-accent-4'
                 },
             ],
         }
@@ -48,5 +71,10 @@ export default {
     // -- End Lifecycle Methods
 }
 </script>
+    
+<style scoped>
+    .footer-text{
+        font-family: 'Bungee Spice';
+    }
 
-<style scoped></style>
+</style>

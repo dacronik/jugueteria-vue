@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container class="home">
       <v-row justify="center" align="center">
         <v-img maxWidth="200" :src="require('@/assets/img/logo.png')"></v-img>
         <h1 class="titulo">Dev-Toys</h1>
@@ -12,10 +12,13 @@
         <carrousel/>
       </v-col>
     </v-row>
-    <v-row v-if="loading">
-      <loading-comp/>
+    <v-row justify="center" align="center">
+      <v-col v-if="!juguetes.length">
+        <loading-comp/>
+      </v-col>
+      
     </v-row>
-    <v-row class="mt-4" v-else>
+    <v-row class="mt-4">
       <v-col md="3" cols="12" class="flex" v-for="juguete in juguetesFiltrados" :key="juguete.id">
         <card-image :juguetes="juguete" @enviar="redirecTo" :showCartIcon="false"/>
       </v-col>
@@ -75,6 +78,7 @@ export default defineComponent({
     font-family: Bungee Spice;
     font-size: 4rem;
   }
+  
   @media screen and (max-width:500px) {
         .titulo{
             font-size: 2rem;

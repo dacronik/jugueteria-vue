@@ -1,7 +1,7 @@
 <template>
     <v-container class="mt-12">
         <v-row justify="center">
-            <v-col cols="12">
+            <v-col cols="12" class="d-flex justify-center">
                 <h1 class="titulo">Contactanos</h1>
             </v-col>
         </v-row>

@@ -32,11 +32,11 @@
             
                 <v-dialog v-model="dialogDelete" max-width="500px">
                     <v-card color="orange">
-                        <v-card-title class="text-h5">¿desea eliminar el producto?</v-card-title>
+                        <v-card-title class="text-h5 text-center">¿desea eliminar el producto?</v-card-title>
                         <v-card-actions>
                             <v-spacer></v-spacer>
-                            <v-btn color="blue-darken-1" variant="text" @click="closeDelete">Cancel <v-icon color="red">mdi-close</v-icon></v-btn>
-                            <v-btn color="blue-darken-1" variant="text" @click="deleteItemConfirm">OK <v-icon color="success">mdi-check-bold</v-icon></v-btn>
+                            <v-btn color="blue-darken-1" variant="text"  @click="closeDelete">Cancel <v-icon color="red" size="25">mdi-close</v-icon></v-btn>
+                            <v-btn color="blue-darken-1" variant="text"  @click="deleteItemConfirm">OK <v-icon color="success" size="25">mdi-check-bold</v-icon></v-btn>
                             <v-spacer></v-spacer>
                         </v-card-actions>
                     </v-card>

@@ -5,8 +5,8 @@
   >
     <v-img
       class="align-end text-white"
-      height="250"
-      width="280"
+      height="300"
+      max-width="480"
       :src="juguetes.image_url"
       cover
     >

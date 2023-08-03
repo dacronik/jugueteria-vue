@@ -1,11 +1,14 @@
 <template>
-    <v-container>
+    <v-container class="productos">
         <v-row>
             <h1 class="ma-6 titulo-productos">Conoce nuestros Productos</h1>
             <v-icon color="orange-darken-4" size="80">mdi-rocket-launch</v-icon>
         </v-row>
         <v-row justify="center">
-            <v-col cols="12" md="3" lg="3" v-for="juguete in juguetes" :key="juguete.id">
+            <v-col cols="12" v-if="!juguetes.length" class="d-flex flex-align-center justify-center">
+                <loading-comp/>
+            </v-col>
+            <v-col cols="12" md="4" lg="3" v-for="juguete in juguetes" :key="juguete.id">
                 <card-productos :juguetes="juguete" @enviar="showCard"/>
             </v-col>
         </v-row>
@@ -43,6 +46,7 @@
 import { mapState } from 'vuex'; 
 import Cards from '@/components/Cards.vue';
 import ShowCards from '@/components/ShowCards.vue';
+import Loading from '@/components/Loading.vue';
 export default {
     name: 'productos-view',
     // props: {},
@@ -66,7 +70,8 @@ export default {
     // watch: {},
     components: {
         'card-productos': Cards,
-        'show-cards': ShowCards
+        'show-cards': ShowCards,
+        'loading-comp':Loading
     },
     // mixins: [],
     // filters: {},
@@ -78,5 +83,8 @@ export default {
 <style scoped>
     .titulo-productos{
         font-family: 'Bungee Spice';
+    }
+    .productos{
+        min-height: 87vh;
     }
 </style>

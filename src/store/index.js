@@ -67,7 +67,7 @@ export default createStore({
   actions: {
     async getData({commit}){
       try {
-        let response = await axios.get('https://juguteria-rest.onrender.com/juguete/')
+        let response = await axios.get('https://jugueteria.onrender.com/juguete/')
         const juguetes = response.data;
         juguetes.forEach((juguete) =>{
           //llamado a la mutacion 

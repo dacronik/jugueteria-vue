@@ -2,10 +2,10 @@
     <v-container>
         <v-row justify="center" align="center">
             <v-progress-circular
-                :size="70"
-                :width="7"
-                color="deep-orange-darken-1"
-                indeterminate
+            :size="180"
+            :width="27"
+            color="deep-orange-darken-1"
+            indeterminate
             ></v-progress-circular>
         </v-row>
     </v-container>
