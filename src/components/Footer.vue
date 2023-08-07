@@ -2,6 +2,7 @@
     <v-footer
       color="blue-darken-3"
       dark
+      app="true"
     >
       <v-row
         justify="center"
